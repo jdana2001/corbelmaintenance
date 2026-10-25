@@ -1,0 +1,136 @@
+/* Corbel Maintenance Services */
+:root {
+  --ink: #1f2125;
+  --slate: #2b2e33;
+  --muted: #5b6068;
+  --ground: #f4f2ee;
+  --stone: #e6e3dd;
+  --line: #d9d6d0;
+  --accent: #2f6a94;
+  --accent-dark: #24557a;
+  --accent-light: #a9c4d8;
+  --orange: #e2581a;
+  --orange-text: #b9450f;
+  --ph: #fff3b0;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: "Barlow", "Helvetica Neue", Arial, sans-serif; color: var(--ink); background: var(--ground); font-size: 17px; line-height: 1.6; }
+img { max-width: 100%; height: auto; }
+a { color: var(--accent-dark); }
+a:hover { color: #173a55; }
+h1, h2, h3 { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; line-height: 1.08; margin: 0; }
+h1 { font-size: clamp(2.6rem, 6vw, 4.5rem); line-height: 1.04; }
+h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.ph { background: var(--ph); color: var(--ink); padding: 0 3px; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; color: var(--ink); padding: 8px 12px; z-index: 10; }
+.hidden { display: none; }
+
+/* Header */
+.site-header { background: var(--ink); color: #fff; }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding-top: 16px; padding-bottom: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+.brand:hover { color: #fff; }
+.brand-name { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 0.04em; line-height: 1; }
+.brand-name small { display: block; font-size: 12px; letter-spacing: 0.18em; font-weight: 600; color: #c9c6c0; margin-top: 3px; }
+.nav { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-left: auto; }
+.nav a { color: #e9e7e3; text-decoration: none; font-weight: 500; padding: 6px 0; }
+.nav a:hover { color: #fff; }
+.nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-decoration-color: var(--accent-light); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+/* Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; font: inherit; font-weight: 600; text-decoration: none; padding: 14px 22px; border-radius: 4px; border: 0; cursor: pointer; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); color: #fff; }
+.btn-ghost { border: 2px solid #fff; color: #fff; padding: 12px 20px; }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { background: #000; color: #fff; }
+.btn-orange { background: var(--orange); color: #fff; padding: 12px 18px; }
+.btn-orange:hover { background: #c2410c; color: #fff; }
+
+/* Hero */
+.hero { background: var(--slate); color: #fff; }
+.hero .wrap { padding-top: 88px; padding-bottom: 96px; }
+.hero .kicker { color: var(--accent-light); font-weight: 600; letter-spacing: 0.06em; font-size: 15px; margin-bottom: 16px; text-transform: uppercase; }
+.hero h1 { margin-bottom: 20px; max-width: 16ch; }
+.hero .lead { font-size: 20px; color: #e4e2de; max-width: 58ch; margin-bottom: 32px; }
+.hero-sub .wrap { padding-top: 64px; padding-bottom: 72px; }
+.hero-sub h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 20ch; }
+
+/* Sections */
+.section { padding: 80px 0; }
+.section-white { background: #fff; }
+.section h2 { margin-bottom: 8px; }
+.section .intro { color: var(--muted); font-size: 18px; max-width: 62ch; margin-bottom: 36px; }
+.section h2.solo { margin-bottom: 36px; }
+
+/* Company cards */
+.companies { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.company { background: #fff; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(31,33,37,0.08), 0 8px 24px rgba(31,33,37,0.06); }
+.company > img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.company-bar { background: var(--ink); padding: 16px 22px; display: flex; align-items: center; gap: 12px; }
+.company-mark { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--orange); border-radius: 6px; flex: none; }
+.company-name { font-family: "Barlow Condensed", sans-serif; font-weight: 700; color: #fff; line-height: 1; font-size: 26px; letter-spacing: 0.02em; }
+.company-name b { color: #f07a3f; font-weight: 700; }
+.company-name small { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; color: #c9c6c0; margin-top: 5px; text-transform: uppercase; }
+.company-body { padding: 22px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.company-body p { color: var(--muted); }
+.company-body .phone { font-size: 15px; }
+.company-body .btn { margin-top: auto; align-self: flex-start; }
+.company-foot { padding: 12px 22px; border-top: 1px solid var(--stone); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--muted); }
+
+/* Feature grids */
+.points { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+.points .num { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 22px; color: var(--accent); margin-bottom: 6px; }
+.points h3, .tiles h3, .steps h3 { font-weight: 600; font-size: 24px; margin-bottom: 6px; }
+.points p, .tiles p, .steps p, .covered p { color: var(--muted); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.tile { background: #fff; border-radius: 6px; padding: 24px; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+.steps .n { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; border: 2px solid var(--slate); border-radius: 50%; font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 10px; }
+.steps h3 { font-size: 22px; margin-bottom: 4px; }
+.covered { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0 40px; border-top: 1px solid var(--line); }
+.covered > div { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.covered h3 { font-weight: 600; font-size: 22px; margin-bottom: 4px; }
+.covered h3 a { color: var(--ink); text-decoration: none; }
+.covered h3 a:hover { color: var(--orange-text); }
+
+/* About */
+.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start; }
+.about h2 { margin-bottom: 16px; }
+.about p { max-width: 60ch; margin-bottom: 14px; }
+.about img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+
+/* Contact + forms */
+.contact { background: var(--slate); color: #fff; }
+.contact-accent { background: var(--accent); }
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start; }
+.split h2 { margin-bottom: 12px; }
+.split .sub { color: #e4e2de; max-width: 46ch; margin-bottom: 24px; }
+.contact-accent .sub { color: #e6eef4; }
+.split .sub a { color: #fff; font-weight: 600; }
+.form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.form .full { grid-column: 1 / -1; }
+.form label { display: block; font-weight: 600; margin-bottom: 6px; }
+.form input, .form select, .form textarea { width: 100%; font: inherit; padding: 11px 12px; border: 1px solid #6b7078; border-radius: 4px; background: #fff; color: var(--ink); }
+.form-card { background: #fff; color: var(--ink); padding: 24px; border-radius: 6px; }
+.form-card input, .form-card select, .form-card textarea { border-color: #b9b5ae; }
+.content { max-width: 70ch; }
+.content p { margin-bottom: 16px; }
+
+/* Footer */
+.site-footer { background: var(--ink); color: #c9c6c0; padding: 32px 0; font-size: 15px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.site-footer a { color: #e9e7e3; text-decoration: none; }
+.site-footer a:hover { color: #fff; text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .hero .wrap { padding-top: 56px; padding-bottom: 64px; }
+  .section { padding: 56px 0; }
+  .nav { margin-left: 0; width: 100%; }
+}

@@ -1,0 +1,15 @@
+[build]
+  publish = "site"
+  command = ""
+
+[[redirects]]
+  from = "https://www.corbelmaintenance.com/*"
+  to = "https://corbelmaintenance.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
